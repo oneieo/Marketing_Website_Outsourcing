@@ -21,18 +21,18 @@ const Navbar: React.FC<NavbarProps> = ({ onAdminClick, isAdmin }) => {
 
         {!isAdmin && (
           <div className="hidden md:flex space-x-10 text-sm font-medium text-slate-400">
-            <a href="/#about" className="hover:text-white transition-colors">
+            <Link to="/about" className="hover:text-white transition-colors">
               회사소개
-            </a>
-            <a href="/#services" className="hover:text-white transition-colors">
+            </Link>
+            <Link to="/services" className="hover:text-white transition-colors">
               사업영역
-            </a>
-            <a
-              href="/#portfolio"
+            </Link>
+            <Link
+              to="/portfolio"
               className="hover:text-white transition-colors"
             >
               포트폴리오
-            </a>
+            </Link>
             <Link to="/contact" className="hover:text-white transition-colors">
               문의하기
             </Link>
