@@ -1,27 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import type { PortfolioItem } from "../types.ts";
+import { DEFAULT_PORTFOLIO } from "../constants/portfolio.ts";
 
 interface AdminProps {
   onAddPortfolio: (item: PortfolioItem) => void;
-  portfolio: PortfolioItem[];
   onDeletePortfolio: (id: number) => void;
 }
 
-const Admin: React.FC<AdminProps> = ({
-  onAddPortfolio,
-  portfolio,
-  onDeletePortfolio,
-}) => {
+const Admin: React.FC<AdminProps> = ({ onAddPortfolio, onDeletePortfolio }) => {
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("병원");
   const [imageUrl, setImageUrl] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
+  const [portfolio, setPortfolio] = useState<PortfolioItem[]>(() => {
+    const saved = localStorage.getItem("aura_portfolio");
+    return saved ? JSON.parse(saved) : DEFAULT_PORTFOLIO;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("aura_portfolio", JSON.stringify(portfolio));
+  }, [portfolio]);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     if (password === "admin123") {
-      // Simple mock authentication
       setIsAuthenticated(true);
     } else {
       alert("비밀번호가 틀렸습니다.");
