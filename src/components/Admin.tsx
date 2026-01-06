@@ -13,7 +13,7 @@ const Admin: React.FC<AdminProps> = ({ onAddPortfolio, onDeletePortfolio }) => {
   const [imageUrl, setImageUrl] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
-  const [portfolio, setPortfolio] = useState<PortfolioItem[]>(() => {
+  const [portfolio] = useState<PortfolioItem[]>(() => {
     const saved = localStorage.getItem("aura_portfolio");
     return saved ? JSON.parse(saved) : DEFAULT_PORTFOLIO;
   });

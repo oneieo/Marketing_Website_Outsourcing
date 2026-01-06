@@ -1,36 +1,60 @@
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 import Main from "./components/Main";
-import Contact from "./components/Contact";
 import About from "./components/About";
+import Contact from "./components/Contact";
 import Admin from "./components/Admin";
 import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import { useState } from "react";
+import type { PortfolioItem } from "./types";
+import { DEFAULT_PORTFOLIO } from "./constants/portfolio";
+import Portfolio from "./components/Portfolio";
 
 const App: React.FC = () => {
   const [isAdminView, setIsAdminView] = useState(false);
+  const [portfolio, setPortfolio] = useState<PortfolioItem[]>(() => {
+    const saved = localStorage.getItem("aura_portfolio");
+    return saved ? JSON.parse(saved) : DEFAULT_PORTFOLIO;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("aura_portfolio", JSON.stringify(portfolio));
+  }, [portfolio]);
+
+  const addPortfolio = (item: PortfolioItem) => {
+    setPortfolio([item, ...portfolio]);
+  };
+
+  const deletePortfolio = (id: number) => {
+    setPortfolio(portfolio.filter((p) => p.id !== id));
+  };
+
   return (
     <BrowserRouter>
-      <Navbar
-        onAdminClick={() => setIsAdminView(!isAdminView)}
-        isAdmin={isAdminView}
-      />
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route
-          path="/admin"
-          element={
-            <Admin
-              onAddPortfolio={() => {}}
-              portfolio={[]}
-              onDeletePortfolio={() => {}}
-            />
-          }
+      <div className="min-h-screen selection:bg-indigo-500 selection:text-white">
+        <Navbar
+          onAdminClick={() => setIsAdminView(!isAdminView)}
+          isAdmin={isAdminView}
         />
-      </Routes>
-      <Footer />
+
+        <Routes>
+          <Route path="/" element={<Main portfolio={portfolio} />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route
+            path="/admin"
+            element={
+              <Admin
+                onAddPortfolio={addPortfolio}
+                onDeletePortfolio={deletePortfolio}
+              />
+            }
+          />
+          <Route path="/portfolio" element={<Portfolio />} />
+        </Routes>
+
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 };
