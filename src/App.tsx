@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import type { PortfolioItem } from "./types";
 import { MAIN_PORTFOLIO } from "./constants/portfolio";
 import Portfolio from "./components/Portfolio";
+import BusinessAreas from "./components/businessAreas/BusinessAreas";
 
 
 const App: React.FC = () => {
@@ -40,6 +41,7 @@ const App: React.FC = () => {
 
         <Routes>
           <Route path="/" element={<Main portfolio={portfolio} />} />
+          <Route path="/services" element={<BusinessAreas />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route

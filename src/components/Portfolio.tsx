@@ -73,7 +73,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ items }) => {
   }
 
   return (
-    <div className="relative bg-white py-20 lg:py-20 xl:py-24 ">
+    <div className="relative bg-gray-300 py-20 lg:py-20 xl:py-24 ">
       {/* 상단 부분 */}
       <section className="animate_right py-20 lg:py-24 xl:py-28">
         <div className="text-center">
@@ -112,11 +112,12 @@ const Portfolio: React.FC<PortfolioProps> = ({ items }) => {
                 type="button"
                 onClick={() => goToPage(page - 1)}
                 disabled={page === 1}
-                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-xs font-medium shadow-[0px_2px_10px_rgba(0,0,0,0.08)] transition hover:bg-black hover:text-white disabled:opacity-40 disabled:hover:bg-white disabled:hover:text-black sm:h-10 sm:w-10 sm:text-base"
+                className="inline-flex h-8 w-8 items-center text-black justify-center rounded-full bg-white text-xs font-medium shadow-[0px_2px_10px_rgba(0,0,0,0.08)] transition hover:bg-black hover:text-white disabled:opacity-40 disabled:hover:bg-white disabled:hover:text-black sm:h-10 sm:w-10 sm:text-base"
                 aria-label="Previous page"
               >
                 ←
               </button>
+
 
               {Array.from({ length: totalPages }, (_, i) => i + 1)
                 .slice(0, 8) // 페이지 너무 많으면 일단 8개까지만 표시 (원하면 ... 처리해줄게)
@@ -125,7 +126,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ items }) => {
                     key={n}
                     type="button"
                     onClick={() => goToPage(n)}
-                    className={`inline-flex h-8 w-8 items-center justify-center rounded-full text-xs font-medium shadow-[0px_2px_10px_rgba(0,0,0,0.08)] transition hover:bg-black hover:text-white sm:h-10 sm:w-10 sm:text-base ${n === page ? "bg-black text-white" : "text-black"
+                    className={`inline-flex h-8 w-8 items-center justify-center rounded-full text-xs font-medium shadow-[0px_2px_10px_rgba(0,0,0,0.08)] transition hover:bg-black hover:text-white sm:h-10 sm:w-10 sm:text-base ${n === page ? "bg-black text-white" : "bg-white text-black"
                       }`}
                     aria-label={`Page ${n}`}
                   >
@@ -137,7 +138,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ items }) => {
                 type="button"
                 onClick={() => goToPage(page + 1)}
                 disabled={page === totalPages}
-                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-xs font-medium shadow-[0px_2px_10px_rgba(0,0,0,0.08)] transition hover:bg-black hover:text-white disabled:opacity-40 disabled:hover:bg-white disabled:hover:text-black sm:h-10 sm:w-10 sm:text-base"
+                className="inline-flex h-8 w-8 items-center justify-center rounded-full text-black bg-white text-xs font-medium shadow-[0px_2px_10px_rgba(0,0,0,0.08)] transition hover:bg-black hover:text-white disabled:opacity-40 disabled:hover:bg-white disabled:hover:text-black sm:h-10 sm:w-10 sm:text-base"
                 aria-label="Next page"
               >
                 →
