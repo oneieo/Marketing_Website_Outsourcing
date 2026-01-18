@@ -7,18 +7,20 @@ import Contact from "./components/Contact";
 import Admin from "./components/Admin";
 import Footer from "./components/Footer";
 import type { PortfolioItem } from "./types";
-import { DEFAULT_PORTFOLIO } from "./constants/portfolio";
-import Portfolio from "./components/Portfolio";
+import { MAIN_PORTFOLIO } from "./constants/portfolio";
+import Portfolio from "./components/portfolio/Portfolio";
+import BusinessAreas from "./components/businessAreas/BusinessAreas";
+
 
 const App: React.FC = () => {
   const [isAdminView, setIsAdminView] = useState(false);
   const [portfolio, setPortfolio] = useState<PortfolioItem[]>(() => {
-    const saved = localStorage.getItem("aura_portfolio");
-    return saved ? JSON.parse(saved) : DEFAULT_PORTFOLIO;
+    const saved = localStorage.getItem("main_portfolio");
+    return saved ? JSON.parse(saved) : MAIN_PORTFOLIO;
   });
 
   useEffect(() => {
-    localStorage.setItem("aura_portfolio", JSON.stringify(portfolio));
+    localStorage.setItem("main_portfolio", JSON.stringify(portfolio));
   }, [portfolio]);
 
   const addPortfolio = (item: PortfolioItem) => {
@@ -39,6 +41,7 @@ const App: React.FC = () => {
 
         <Routes>
           <Route path="/" element={<Main portfolio={portfolio} />} />
+          <Route path="/services" element={<BusinessAreas />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route

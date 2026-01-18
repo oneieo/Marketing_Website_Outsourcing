@@ -6,9 +6,9 @@ export interface Service {
 
 export interface PortfolioItem {
   id: number;
-  title: string;
-  category: string;
   imageUrl: string;
+  title: string;
+  category: string[];
   description?: string;
 }
 
@@ -16,4 +16,18 @@ export interface AIStrategyResult {
   slogan: string;
   keyStrategies: string[];
   targetAudience: string;
+}
+
+type Columns = 3 | 4;
+export interface PortfolioGridProps {
+  portfolio: PortfolioItem[];
+  columns?: Columns;
+  // 클릭시 이동 함수
+  onCardClick?: (item: PortfolioItem) => void;
+  // 간격
+  gapX?: number;
+  gapY?: number;
+  showReadMore?: boolean;
+  readMoreText?: string;
+  className?: string;
 }
