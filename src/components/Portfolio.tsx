@@ -74,19 +74,8 @@ const Portfolio: React.FC<PortfolioProps> = ({ items }) => {
 
   return (
     <div className="relative bg-white py-20 lg:py-20 xl:py-24 ">
-      {/* animations (no CSS file) */}
-      <style>{`
-        @keyframes fadeUp {
-          from { opacity: 0; transform: translateY(14px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-        .animate_top { animation: fadeUp .45s ease both; }
-        .animate_left { animation: fadeUp .45s ease both; }
-        .animate_right { animation: fadeUp .45s ease both; }
-      `}</style>
-
       {/* 상단 부분 */}
-      <section className="py-20 lg:py-24 xl:py-28">
+      <section className="animate_right py-20 lg:py-24 xl:py-28">
         <div className="text-center">
           <h2 className="text-[48px] font-extrabold tracking-tight text-black">
             포트폴리오

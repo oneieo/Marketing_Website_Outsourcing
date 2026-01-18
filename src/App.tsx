@@ -10,6 +10,7 @@ import type { PortfolioItem } from "./types";
 import { MAIN_PORTFOLIO } from "./constants/portfolio";
 import Portfolio from "./components/Portfolio";
 
+
 const App: React.FC = () => {
   const [isAdminView, setIsAdminView] = useState(false);
   const [portfolio, setPortfolio] = useState<PortfolioItem[]>(() => {
