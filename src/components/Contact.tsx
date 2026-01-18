@@ -51,7 +51,7 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="relative py-20 px-6 flex flex-col items-center overflow-hidden bg-gray-300"
+      className="relative py-20 px-6 flex flex-col items-center overflow-hidden"
     >
 
       {/* 상단 타이틀 섹션 */}

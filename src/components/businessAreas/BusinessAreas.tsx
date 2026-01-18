@@ -4,7 +4,7 @@ import { ServiceBox } from "./ServiceBox";
 
 const BusinessAreas: React.FC = () => {
     return (
-        <section className="relative py-20 lg:py-20 xl:py-24 px-6 flex flex-col items-center overflow-hidden bg-gray-300 text-black">
+        <section className="relative py-20 lg:py-20 xl:py-24 px-6 flex flex-col items-center overflow-hidden text-black">
             {/* 1. 상단 헤더 섹션 */}
             <div className="animate_right text-center py-20 lg:py-24 xl:py-28">
                 <h2 className="text-[56px] font-bold tracking-tight text-black mb-4">사업영역</h2>

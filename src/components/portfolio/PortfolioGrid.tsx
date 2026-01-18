@@ -1,5 +1,5 @@
 import React from "react";
-import type { PortfolioGridProps } from "../types";
+import type { PortfolioGridProps } from "../../types";
 
 type Columns = 3 | 4;
 

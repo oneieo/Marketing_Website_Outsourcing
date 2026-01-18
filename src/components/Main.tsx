@@ -3,7 +3,7 @@ import Hero from "./Hero";
 import About from "./About";
 import Contact from "./Contact";
 import type { PortfolioItem } from "../types";
-import PortfolioGrid from "./PortfolioGrid";
+import PortfolioGrid from "./portfolio/PortfolioGrid";
 
 interface MainProps {
   portfolio: PortfolioItem[];
@@ -98,6 +98,34 @@ const Main: React.FC<MainProps> = ({ portfolio }) => {
           gapX={3}
           gapY={7}
         />
+
+        <div className="flex justify-center mt-12">
+          <button className="
+          /* 기본 스타일: 테두리와 글자만 붉은색, 배경 투명 */
+          bg-transparent border-2 border-[#a62118] text-[#a62118] 
+          px-8 py-1 rounded-full font-bold text-s
+          
+          /* 중앙 정렬 및 기본 배치 */
+          inline-flex items-center justify-center
+          
+          /* 애니메이션 및 전환 효과 (기본) */
+          transition-all duration-300 ease-in-out
+          
+          /* 호버(Hover) 시 스타일: 배경은 붉은색, 글자는 흰색 */
+          hover:bg-[#a62118] 
+          hover:text-white
+          
+          /* 호버 시 움직임 효과 */
+          hover:scale-105 
+          hover:shadow-lg
+          hover:-translate-y-1
+          
+          /* 클릭(Active) 시 피드백 */
+          active:scale-95
+        ">
+            더보기
+          </button>
+        </div>
 
       </section>
 

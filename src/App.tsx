@@ -8,7 +8,7 @@ import Admin from "./components/Admin";
 import Footer from "./components/Footer";
 import type { PortfolioItem } from "./types";
 import { MAIN_PORTFOLIO } from "./constants/portfolio";
-import Portfolio from "./components/Portfolio";
+import Portfolio from "./components/portfolio/Portfolio";
 import BusinessAreas from "./components/businessAreas/BusinessAreas";
 
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
-import type { PortfolioItem } from "../types";
-import { DEFAULT_PORTFOLIO } from "../constants/portfolio";
+import type { PortfolioItem } from "../../types";
+import { DEFAULT_PORTFOLIO } from "../../constants/portfolio";
 import PortfolioGrid from "./PortfolioGrid";
 
 interface PortfolioProps {
@@ -73,7 +73,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ items }) => {
   }
 
   return (
-    <div className="relative bg-gray-300 py-20 lg:py-20 xl:py-24 ">
+    <div className="relative py-20 lg:py-20 xl:py-24 ">
       {/* 상단 부분 */}
       <section className="animate_right py-20 lg:py-24 xl:py-28">
         <div className="text-center">
