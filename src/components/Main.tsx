@@ -1,9 +1,9 @@
 import React from "react";
 import Hero from "./Hero";
 import About from "./About";
-import Portfolio from "./Portfolio";
 import Contact from "./Contact";
 import type { PortfolioItem } from "../types";
+import PortfolioGrid from "./PortfolioGrid";
 
 interface MainProps {
   portfolio: PortfolioItem[];
@@ -91,7 +91,14 @@ const Main: React.FC<MainProps> = ({ portfolio }) => {
 
       {/* Portfolio 섹션 */}
       <section id="portfolio">
-        <Portfolio items={portfolio} />
+        <PortfolioGrid
+          portfolio={portfolio}
+          columns={4}
+          onCardClick={(item) => console.log("클릭:", item.title)}
+          gapX={3}
+          gapY={7}
+        />
+
       </section>
 
       {/* Contact 섹션 */}
