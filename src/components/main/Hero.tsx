@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
           당신의 브랜드에 꽃을 피우다
         </div>
 
-        <h1 className="text-2xl md:text-6xl font-black mb-8 leading-[1.1]">
+        <h1 id="batang" className="text-2xl md:text-6xl font-black mb-8 leading-[1.1]">
           "
           <span className="text-[#A11D18]">내 브랜드</span>
           처럼,

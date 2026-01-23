@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'batang': ['KoPubWorld Batang', 'serif'],
+        'batang': ['KoPub Batang', 'serif'],
         'pretendard': ['Pretendard', 'sans-serif'],
       },
     },
