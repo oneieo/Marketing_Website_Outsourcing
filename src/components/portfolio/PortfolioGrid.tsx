@@ -9,7 +9,11 @@ const getResponsiveCols = (cols: Columns) => {
         : "grid-cols-2 sm:grid-cols-2 lg:grid-cols-4";
 };
 
-const PortfolioGrid: React.FC<PortfolioGridProps> = ({
+type ExtraProps = {
+    getItemClassName?: (index: number) => string; // ✅ 추가
+};
+
+const PortfolioGrid: React.FC<PortfolioGridProps & ExtraProps> = ({
     portfolio,
     columns = 3,
     onCardClick,
@@ -18,6 +22,7 @@ const PortfolioGrid: React.FC<PortfolioGridProps> = ({
     showReadMore = true,
     readMoreText = "Read More",
     className,
+    getItemClassName, // ✅ 추가
 }) => {
     const gapStyle: React.CSSProperties = {
         columnGap: `${gapX * 0.25}rem`,
@@ -26,12 +31,15 @@ const PortfolioGrid: React.FC<PortfolioGridProps> = ({
 
     return (
         <section className={className}>
-            <div className="mx-auto max-w-7xl px-4 xl:px-0">
+            <div className="mx-auto max-w-7xl px-4 xl:px-0 py-8">
                 <div className={`grid ${getResponsiveCols(columns)}`} style={gapStyle}>
-                    {portfolio.map((p) => (
+                    {portfolio.map((p, i) => (
                         <article
                             key={p.id}
-                            className="animate_top cursor-pointer overflow-hidden rounded-xl bg-white shadow-[0px_8px_70px_rgba(0,0,0,0.05)]"
+                            className={[
+                                "cursor-pointer overflow-hidden rounded-xl bg-white shadow-[0px_8px_70px_rgba(0,0,0,0.05)]",
+                                getItemClassName?.(i) ?? "", // ✅ 외부에서 애니메이션 주입
+                            ].join(" ")}
                             onClick={() => onCardClick?.(p)}
                         >
                             {/* image */}
@@ -44,7 +52,7 @@ const PortfolioGrid: React.FC<PortfolioGridProps> = ({
                                         <button
                                             type="button"
                                             onClick={(e) => {
-                                                e.stopPropagation(); // 카드 클릭과 분리
+                                                e.stopPropagation();
                                                 onCardClick?.(p);
                                             }}
                                             className="inline-flex items-center justify-center rounded-full bg-blue-600 px-7 py-3 text-white font-medium transition hover:bg-pink-500"
@@ -59,10 +67,10 @@ const PortfolioGrid: React.FC<PortfolioGridProps> = ({
                             <div className="p-7">
                                 <div className="flex flex-wrap items-center gap-2">
                                     {Array.isArray(p.category)
-                                        ? p.category.map((t, i) => (
-                                            <span key={i} className="text-xs font-medium text-[#A11D18]">
+                                        ? p.category.map((t, idx) => (
+                                            <span key={idx} className="text-xs font-medium text-[#A11D18]">
                                                 {t}
-                                                {i !== p.category.length - 1 ? "," : ""}
+                                                {idx !== p.category.length - 1 ? "," : ""}
                                             </span>
                                         ))
                                         : (

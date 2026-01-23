@@ -1,11 +1,48 @@
+import { useInViewOnce } from "../../hooks/useInViewOnce";
+
+function animClass({
+    inView,
+    delayMs,
+    from = "up",
+}: {
+    inView: boolean;
+    delayMs: number;
+    from?: "up" | "left" | "right";
+}) {
+    const base =
+        "transition-all duration-700 ease-out will-change-transform will-change-opacity";
+    const delay = `delay-[${delayMs}ms]`;
+
+    if (!inView) {
+        const translate =
+            from === "up"
+                ? "translate-y-8"
+                : from === "left"
+                    ? "-translate-x-8"
+                    : "translate-x-8";
+
+        return [base, delay, "opacity-0", translate, "blur-[2px]"].join(" ");
+    }
+
+    return [base, delay, "opacity-100", "translate-y-0", "translate-x-0", "blur-0"].join(
+        " "
+    );
+}
+
 const PricingSection = () => {
+    const { ref, inView } = useInViewOnce<HTMLElement>({ threshold: 0.2 });
+
     return (
-        <section className="w-full flex justify-center py-32">
+        <section ref={ref} className="w-full flex justify-center py-16">
             {/* 전체 컨테이너 */}
             <div className="max-w-[1276px] w-full flex flex-col items-center gap-16 px-6">
-
-                {/* 타이틀 */}
-                <div className="text-center text-4xl font-bold font-['KoPubWorldBatang'] leading-relaxed">
+                {/* 타이틀 (맨 먼저) */}
+                <div
+                    className={
+                        animClass({ inView, delayMs: 0, from: "up" }) +
+                        " text-center text-4xl font-bold leading-relaxed"
+                    }
+                >
                     <span className="text-red-800">최고의 퀄리티</span>
                     <span className="text-black">를 업계 최대 수준의 </span>
                     <span className="text-red-800">최저가 패키지</span>
@@ -13,13 +50,14 @@ const PricingSection = () => {
                 </div>
 
                 {/* 카드 영역 */}
-                <div className="
-                    w-full
-                    flex flex-col gap-9
-                    lg:flex-row lg:justify-center
-                ">
+                <div className="w-full flex flex-col gap-9 lg:flex-row lg:justify-center">
                     {/* STANDARD */}
-                    <div className="w-full max-w-[384px] h-[470px] p-5 bg-gradient-to-b from-black to-red-800 rounded-[10px] shadow-[0_0_20px_rgba(0,0,0,0.25)] flex flex-col justify-center items-center gap-5">
+                    <div
+                        className={
+                            animClass({ inView, delayMs: 150, from: "up" }) +
+                            " w-full max-w-[384px] h-[470px] p-5 bg-gradient-to-b from-black to-red-800 rounded-[10px] shadow-[0_0_20px_rgba(0,0,0,0.25)] flex flex-col justify-center items-center gap-5"
+                        }
+                    >
                         <div className="text-center text-white">
                             <div className="text-3xl font-bold">STANDARD</div>
                             <div className="text-xl font-bold">10건/30일</div>
@@ -42,7 +80,12 @@ const PricingSection = () => {
                     </div>
 
                     {/* DELUXE */}
-                    <div className="w-full max-w-[384px] h-[470px] p-5 bg-gradient-to-b from-black to-red-800 rounded-[10px] shadow-[0_0_20px_rgba(0,0,0,0.25)] flex flex-col justify-center items-center gap-5">
+                    <div
+                        className={
+                            animClass({ inView, delayMs: 300, from: "up" }) +
+                            " w-full max-w-[384px] h-[470px] p-5 bg-gradient-to-b from-black to-red-800 rounded-[10px] shadow-[0_0_20px_rgba(0,0,0,0.25)] flex flex-col justify-center items-center gap-5"
+                        }
+                    >
                         <div className="text-center text-white">
                             <div className="text-3xl font-bold">DELUXE</div>
                             <div className="text-xl font-bold">14건/30일</div>
@@ -66,7 +109,12 @@ const PricingSection = () => {
                     </div>
 
                     {/* PREMIUM */}
-                    <div className="w-full max-w-[384px] h-[470px] p-5 bg-gradient-to-b from-black to-red-800 rounded-[10px] shadow-[0_0_20px_rgba(0,0,0,0.25)] flex flex-col justify-center items-center gap-5">
+                    <div
+                        className={
+                            animClass({ inView, delayMs: 450, from: "up" }) +
+                            " w-full max-w-[384px] h-[470px] p-5 bg-gradient-to-b from-black to-red-800 rounded-[10px] shadow-[0_0_20px_rgba(0,0,0,0.25)] flex flex-col justify-center items-center gap-5"
+                        }
+                    >
                         <div className="text-center text-white">
                             <div className="text-3xl font-bold">PREMIUM</div>
                             <div className="text-xl font-bold">18건/30일</div>
