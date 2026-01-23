@@ -10,7 +10,7 @@ import type { PortfolioItem } from "./types";
 import { MAIN_PORTFOLIO } from "./constants/portfolio";
 import Portfolio from "./components/portfolio/Portfolio";
 import BusinessAreas from "./components/businessAreas/BusinessAreas";
-
+import ScrollToTop from "./components/common/ScrollToTop";
 
 const App: React.FC = () => {
   const [isAdminView, setIsAdminView] = useState(false);
@@ -33,6 +33,7 @@ const App: React.FC = () => {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="min-h-screen selection:bg-indigo-500 selection:text-white">
         <Navbar
           onAdminClick={() => setIsAdminView(!isAdminView)}
