@@ -33,7 +33,7 @@ const PricingSection = () => {
     const { ref, inView } = useInViewOnce<HTMLElement>({ threshold: 0.2 });
 
     return (
-        <section ref={ref} className="w-full flex justify-center py-16">
+        <section ref={ref} id="batang" className="w-full flex justify-center py-16">
             {/* 전체 컨테이너 */}
             <div className="max-w-[1276px] w-full flex flex-col items-center gap-16 px-6">
                 {/* 타이틀 (맨 먼저) */}
@@ -60,17 +60,17 @@ const PricingSection = () => {
                     >
                         <div className="text-center text-white">
                             <div className="text-3xl font-bold">STANDARD</div>
-                            <div className="text-xl font-bold">10건/30일</div>
+                            <div className="text-xl font-medium">10건/30일</div>
                         </div>
 
                         <div className="text-center text-white">
-                            <div className="text-4xl font-bold">150,000원</div>
-                            <div className="text-xl font-bold">
+                            <div className="text-4xl font-">150,000원</div>
+                            <div className="text-xl font-medium">
                                 가성비로 시작하는 기초 브랜딩의 정석
                             </div>
                         </div>
 
-                        <ul className="text-white text-base font-bold space-y-1 text-center">
+                        <ul className="text-white text-base font-medium space-y-1 text-center">
                             <li>노출되는 키워드</li>
                             <li>개인 브랜딩 1000자 이내</li>
                             <li>고급이미지</li>
@@ -88,17 +88,17 @@ const PricingSection = () => {
                     >
                         <div className="text-center text-white">
                             <div className="text-3xl font-bold">DELUXE</div>
-                            <div className="text-xl font-bold">14건/30일</div>
+                            <div className="text-xl font-medium">14건/30일</div>
                         </div>
 
                         <div className="text-center text-white">
                             <div className="text-4xl font-bold">210,000원</div>
-                            <div className="text-lg font-bold">
+                            <div className="text-lg font-medium">
                                 체계적인 이웃 관리로 커뮤니티 영향력 확대
                             </div>
                         </div>
 
-                        <ul className="text-white text-base font-bold space-y-1 text-center">
+                        <ul className="text-white text-base font-medium space-y-1 text-center">
                             <li>노출되는 키워드</li>
                             <li>개인 브랜딩 1500자 내외</li>
                             <li>고급이미지</li>
@@ -117,17 +117,17 @@ const PricingSection = () => {
                     >
                         <div className="text-center text-white">
                             <div className="text-3xl font-bold">PREMIUM</div>
-                            <div className="text-xl font-bold">18건/30일</div>
+                            <div className="text-xl font-medium">18건/30일</div>
                         </div>
 
                         <div className="text-center text-white">
                             <div className="text-4xl font-bold">300,000원</div>
-                            <div className="text-lg font-bold">
+                            <div className="text-lg font-medium">
                                 브랜드 구축부터 노출까지, 올인원 프리미엄 케어
                             </div>
                         </div>
 
-                        <ul className="text-white text-base font-bold space-y-1 text-center">
+                        <ul className="text-white text-base font-medium space-y-1 text-center">
                             <li>노출되는 키워드</li>
                             <li>개인 브랜딩 2000자 이내</li>
                             <li>홈페이지형 블로그 제작</li>

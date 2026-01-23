@@ -27,7 +27,7 @@ const ITEMS: Item[] = [
                 <span className="text-white text-base font-normal leading-5">
                     복잡한 마케팅 용어 대신{" "}
                 </span>
-                <span className="text-red-800 text-base font-semibold leading-5">
+                <span className="text-red-800 text-base font-bold leading-5">
                     200건의 성공 데이터를 기반으로 한 명확한 로드맵을 제시
                 </span>
                 <span className="text-white text-base font-normal leading-5">
@@ -88,7 +88,7 @@ const ITEMS: Item[] = [
                     마케팅은 전문가에게 맡기고 대표님은 본업에만 집중하세요.
                     <br />
                 </span>
-                <span className="text-red-800 text-base font-semibold leading-5">
+                <span className="text-red-800 text-base font-bold leading-5">
                     업계 최대 수준의 최저가 패키지
                 </span>
                 <span className="text-white text-base font-normal leading-5">
