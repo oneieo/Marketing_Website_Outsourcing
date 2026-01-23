@@ -1,9 +1,10 @@
 import React from "react";
 import Hero from "./Hero";
-import About from "./About";
-import Contact from "./Contact";
-import type { PortfolioItem } from "../types";
-import PortfolioGrid from "./portfolio/PortfolioGrid";
+import Contact from "../Contact";
+import type { PortfolioItem } from "../../types";
+import PortfolioGrid from "../portfolio/PortfolioGrid";
+import StatsSection from "./StatsSection";
+import PricingSection from "./PricingSection ";
 
 interface MainProps {
   portfolio: PortfolioItem[];
@@ -12,32 +13,18 @@ interface MainProps {
 const Main: React.FC<MainProps> = ({ portfolio }) => {
   return (
     <main>
-      <Hero />
-
-      <section className="py-20 px-6 border-y border-white/5 bg-white/[0.01]">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
-          {[
-            { label: "누적 캠페인 수", val: "2,400+" },
-            { label: "평균 매출 상승률", val: "185%" },
-            { label: "함께하는 전문가", val: "45명" },
-            { label: "관리 브랜드 수", val: "320+" },
-          ].map((stat, i) => (
-            <div key={i} className="text-center">
-              <div className="text-4xl font-black text-white mb-1">
-                {stat.val}
-              </div>
-              <div className="text-slate-500 text-xs font-bold uppercase tracking-widest">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
+      <section id="Hero">
+        <Hero />
+      </section>
+      <section id="stateSection">
+        <StatsSection />
       </section>
 
-      {/* About 섹션 */}
-      <section id="about">
-        <About />
+      {/* PricingSection  섹션 */}
+      <section id="PricingSection ">
+        <PricingSection />
       </section>
+
 
       {/* Services 섹션 */}
       <section id="services" className="py-24 px-6">

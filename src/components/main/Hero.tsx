@@ -2,8 +2,8 @@ import React from "react";
 
 const Hero: React.FC = () => {
   return (
-    <section className="pt-32 pb-20 px-6 overflow-hidden">
-      <div className="max-w-7xl mx-auto text-center relative">
+    <section className="pt-32 px-6 overflow-hidden">
+      <div className="max-w-7xl pb-32 mx-auto text-center relative">
 
         <img
           src="images/icon-mainp-logo.png"
@@ -40,7 +40,16 @@ const Hero: React.FC = () => {
             신청하기
           </button>
         </div>
-
+      </div>
+      {/* 타이틀 */}
+      <div
+        data-animate
+        className="text-center text-4xl pb-10 leading-relaxed
+                   opacity-0 translate-y-4
+                   transition-all duration-700 ease-out"
+      >
+        <div>증명된 성과, 압도적 신뢰</div>
+        <div>지속 가능한 파트너십을 결과로 증명합니다</div>
       </div>
     </section>
   );
