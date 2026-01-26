@@ -2,23 +2,35 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="py-12 border-t border-white/5 text-center text-slate-500 text-sm">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex justify-center space-x-8 mb-8">
-          <a href="#" className="hover:text-white transition-colors">
-            Twitter
-          </a>
-          <a href="#" className="hover:text-white transition-colors">
-            LinkedIn
-          </a>
-          <a href="#" className="hover:text-white transition-colors">
-            Instagram
-          </a>
+    <footer className="bg-black border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-6 py-12">
+        <div className="flex items-center justify-between">
+
+          {/* 왼쪽 로고 */}
+          <div className="flex items-center">
+            <img
+              src="/images/icon-footer-logo.png"
+              alt="화경 로고"
+              className="w-[181px] h-[120px] object-contain"
+            />
+
+          </div>
+
+          {/* 오른쪽 정보 (좌측 정렬) */}
+          <div className="text-left text-sm text-slate-400 leading-relaxed w-[260px] mr-24">
+            <div>상호명: 화경마케팅</div>
+            <div>대표: 이민경</div>
+            <div>사업자등록번호:</div>
+            <div>주소:</div>
+            <div>전화:</div>
+            <div>이메일: dialsrud0614@naver.com</div>
+          </div>
+
         </div>
-        <p>© 2024 Aura Growth Marketing Agency. All Rights Reserved.</p>
-        <p className="mt-2 text-[10px] text-slate-600">
-          사업자등록번호: 000-00-00000 | 대표: 아우라
-        </p>
+
+        <div className="mt-10 text-center text-[10px] text-slate-600">
+          © 2024 화경(HWAGYEONG). All Rights Reserved.
+        </div>
       </div>
     </footer>
   );

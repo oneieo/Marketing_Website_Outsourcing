@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useInViewOnce } from "../hooks/useInViewOnce";
+import { useInViewOnce } from "../../hooks/useInViewOnce";
 
 function animClass({
   inView,
@@ -36,7 +36,6 @@ const Contact: React.FC = () => {
   const [product, setProduct] = useState("STANDARD");
   const [message, setMessage] = useState("");
 
-  // ✅ inView
   const { ref, inView } = useInViewOnce<HTMLDivElement>({ threshold: 0.2 });
 
   const onSub = () => {
@@ -288,6 +287,7 @@ const Contact: React.FC = () => {
               </button>
             </form>
           </div>
+
         </div>
       </div>
     </section>

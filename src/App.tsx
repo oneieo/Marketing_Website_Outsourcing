@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Main from "./components/main/Main";
 import About from "./components/About";
-import Contact from "./components/Contact";
+import Contact from "./components/contact/Contact";
 import Admin from "./components/Admin";
 import Footer from "./components/Footer";
 import type { PortfolioItem } from "./types";

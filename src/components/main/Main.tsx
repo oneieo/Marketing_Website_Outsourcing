@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "./Hero";
-import Contact from "../Contact";
+import Contact from "../contact/Contact";
 import type { PortfolioItem } from "../../types";
 import PortfolioGrid from "../portfolio/PortfolioGrid";
 import StatsSection from "./StatsSection";
@@ -73,8 +73,10 @@ const Main: React.FC<MainProps> = ({ portfolio }) => {
 
       <div
         className="
-          bg-[url('/images/bg.png')] bg-[length:100%_100%]
-        "
+          bg-[url('/images/bg.png')]
+          bg-cover
+          bg-center
+          bg-no-repeat        "
       >
         <section id="OurClient" className="py-20">
           <div className="mx-auto max-w-7xl px-6">
