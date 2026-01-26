@@ -34,12 +34,11 @@ const ServiceColumn: React.FC<ServiceListSection> = ({ iconSrc, iconAlt, title, 
     return (
         <div
             className="
-            space-y-8 pb-8 pt-2 rounded-lg
-            transition-all duration-300 ease-out
-            hover:-translate-y-2
-            hover:bg-white
-            hover:shadow-[0px_20px_60px_rgba(0,0,0,0.12)]
-            hover:ring-1 hover:ring-black/10
+        group flex flex-col items-center text-center p-8 rounded-lg
+        transition-all duration-300 ease-out
+        hover:-translate-y-2
+        hover:shadow-[0px_20px_60px_rgba(0,0,0,0.12)]
+        hover:bg-black/[0.02]
             "
         >
             <div className="flex flex-col items-center mb-6">

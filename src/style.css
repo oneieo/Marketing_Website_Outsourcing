@@ -7,13 +7,14 @@
 
 @layer base {
     body {
-      font-family: 'Pretendard', sans-serif;
+        /* font-family: 'Pretendard', sans-serif; */
+        font-family: 'KoPub Batang', serif;
     }
 }
 
 @layer components {
     #batang {
-      font-family: 'KoPub Batang', serif;
+        font-family: 'KoPub Batang', serif;
     }
 }
 
