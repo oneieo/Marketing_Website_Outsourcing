@@ -7,8 +7,8 @@
 
 @layer base {
     body {
-        /* font-family: 'Pretendard', sans-serif; */
-        font-family: 'KoPub Batang', serif;
+        font-family: 'Pretendard', sans-serif;
+        /* /font-family: 'KoPub Batang', serif; */
     }
 }
 

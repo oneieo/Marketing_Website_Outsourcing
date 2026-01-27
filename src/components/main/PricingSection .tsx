@@ -33,11 +33,12 @@ const PricingSection = () => {
     const { ref, inView } = useInViewOnce<HTMLElement>({ threshold: 0.2 });
 
     return (
-        <section ref={ref} id="batang" className="w-full flex justify-center py-16">
+        <section ref={ref}  className="w-full flex justify-center py-16">
             {/* 전체 컨테이너 */}
             <div className="max-w-[1276px] w-full flex flex-col items-center gap-16 px-6">
                 {/* 타이틀 (맨 먼저) */}
                 <div
+                id="batang"
                     className={
                         animClass({ inView, delayMs: 0, from: "up" }) +
                         " text-center text-4xl font-bold leading-relaxed"
@@ -64,7 +65,7 @@ const PricingSection = () => {
                         </div>
 
                         <div className="text-center text-white">
-                            <div className="text-4xl font-bold">150,000원</div>
+                            <div className="text-4xl font-bold mb-3">150,000원</div>
                             <div className="text-xl font-medium">
                                 가성비로 시작하는 기초 브랜딩의 정석
                             </div>
@@ -92,8 +93,8 @@ const PricingSection = () => {
                         </div>
 
                         <div className="text-center text-white">
-                            <div className="text-4xl font-bold">210,000원</div>
-                            <div className="text-lg font-medium">
+                            <div className="text-4xl font-bold mb-3">210,000원</div>
+                            <div className="text-xl font-medium">
                                 체계적인 이웃 관리로 커뮤니티 영향력 확대
                             </div>
                         </div>
@@ -121,7 +122,7 @@ const PricingSection = () => {
                         </div>
 
                         <div className="text-center text-white">
-                            <div className="text-4xl font-bold">300,000원</div>
+                            <div className="text-4xl font-bold mb-3">300,000원</div>
                             <div className="text-lg font-medium">
                                 브랜드 구축부터 노출까지, 올인원 프리미엄 케어
                             </div>

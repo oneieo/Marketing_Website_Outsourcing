@@ -26,7 +26,7 @@ const Navbar: React.FC<NavbarProps> = ({ onAdminClick, isAdmin }) => {
         </div>
 
         {!isAdmin && (
-          <div className="hidden md:flex space-x-10 text-sm font-medium text-slate-400">
+          <div className="hidden md:flex space-x-10 text-md font-medium text-slate-400">
             <Link to="/about" className="hover:text-white transition-colors">
               회사소개
             </Link>
@@ -51,7 +51,7 @@ const Navbar: React.FC<NavbarProps> = ({ onAdminClick, isAdmin }) => {
               onAdminClick();
               navigate(isAdmin ? "/" : "/admin");
             }}
-            className="text-xs text-slate-500 hover:text-white transition-colors"
+            className="text-md text-slate-500 hover:text-white transition-colors"
           >
             {isAdmin ? "사이트로 돌아가기" : "관리자"}
           </button>
@@ -59,7 +59,7 @@ const Navbar: React.FC<NavbarProps> = ({ onAdminClick, isAdmin }) => {
           {!isAdmin && (
             <button
               onClick={() => navigate("/contact")}
-              className="px-5 py-2.5 bg-[#A11D18] hover:bg-white text-white hover:text-[#A11D18] border-2 border-[#A11D18] rounded-full text-sm font-semibold transition-all"
+              className="px-4 py-1.5 bg-[#A11D18] hover:bg-white text-white hover:text-[#A11D18] border-2 border-[#A11D18] rounded-full text-md font-semibold transition-all"
             >
               상담 예약하기
             </button>

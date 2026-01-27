@@ -20,7 +20,6 @@ export default function StatsSection() {
     return (
         <section
             ref={ref}
-            id="batang"
             className="px-6 py-16 font-bold"
         >
             {/* 통계 */}
@@ -30,7 +29,7 @@ export default function StatsSection() {
                     className="text-center opacity-0 translate-y-4
                      transition-all duration-700 ease-out delay-150"
                 >
-                    <div className="text-5xl font-black text-[#A11D18] mb-1 tabular-nums">
+                    <div id="batang" className="text-5xl font-black text-[#A11D18] mb-1 tabular-nums">
                         {percent}%
                     </div>
                     <div className="text-black text-lg font-bold uppercase tracking-widest">
@@ -43,7 +42,7 @@ export default function StatsSection() {
                     className="text-center opacity-0 translate-y-4
                      transition-all duration-700 ease-out delay-300"
                 >
-                    <div className="text-5xl font-black text-[#A11D18] mb-1 tabular-nums">
+                    <div id="batang" className="text-5xl font-black text-[#A11D18] mb-1 tabular-nums">
                         {cases}건
                     </div>
                     <div className="text-black text-lg font-bold uppercase tracking-widest">

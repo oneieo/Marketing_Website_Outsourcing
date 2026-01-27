@@ -55,7 +55,7 @@ const PortfolioGrid: React.FC<PortfolioGridProps & ExtraProps> = ({
                                                 e.stopPropagation();
                                                 onCardClick?.(p);
                                             }}
-                                            className="inline-flex items-center justify-center rounded-full bg-blue-600 px-7 py-3 text-white font-medium transition hover:bg-pink-500"
+                                            className="inline-flex items-center justify-center rounded-full bg-[#401d1c]  px-7 py-3 text-white font-medium transition hover:bg-[#A11D18]"
                                         >
                                             {readMoreText}
                                         </button>
@@ -68,19 +68,19 @@ const PortfolioGrid: React.FC<PortfolioGridProps & ExtraProps> = ({
                                 <div className="flex flex-wrap items-center gap-2">
                                     {Array.isArray(p.category)
                                         ? p.category.map((t, idx) => (
-                                            <span key={idx} className="text-xs font-medium text-[#A11D18]">
+                                            <span key={idx} className="text-sm font-semibold text-[#A11D18]">
                                                 {t}
                                                 {idx !== p.category.length - 1 ? "," : ""}
                                             </span>
                                         ))
                                         : (
-                                            <span className="text-xs font-medium text-[#A11D18]">
+                                            <span className="text-sm font-semibold text-[#A11D18]">
                                                 {String(p.category)}
                                             </span>
                                         )}
                                 </div>
 
-                                <h3 className="mt-3 w-[95%] text-[20px] leading-snug text-slate-900">
+                                <h3 className="mt-3 w-[95%] text-[20px] font-medium leading-snug text-slate-900">
                                     <span className="transition hover:text-blue-600">{p.title}</span>
                                 </h3>
                             </div>

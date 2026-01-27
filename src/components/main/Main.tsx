@@ -1,6 +1,5 @@
 import React from "react";
 import Hero from "./Hero";
-import Contact from "../contact/Contact";
 import type { PortfolioItem } from "../../types";
 import PortfolioGrid from "../portfolio/PortfolioGrid";
 import StatsSection from "./StatsSection";
@@ -8,6 +7,7 @@ import PricingSection from "./PricingSection ";
 import AttentionSection from "./AttentionSection";
 import { useInViewOnce } from "../../hooks/useInViewOnce";
 import ClientsAutoSlider from "./ClientsAutoSlider";
+import ContactForm from "../contact/ContactForm";
 
 function animClass({
   inView,
@@ -81,8 +81,8 @@ const Main: React.FC<MainProps> = ({ portfolio }) => {
         <section id="OurClient" className="py-20">
           <div className="mx-auto max-w-7xl px-6">
             <div className="text-center space-y-3">
-              <div>our client</div>
-              <div>우리의 클라이언트들</div>
+              <div id="batang" className="text-black text-4xl font-bold leading-10 mb-6">화경과 함께한 파트너사</div>
+              <div className="text-black text-md font-normal leading-5">수많은 성공 사례로 검증된 화경만의 공식을 바탕으로 브랜드가 직면한 불확실성을 독보적인 확신으로 바꿔 드립니다.</div>
             </div>
             <div className="mt-10">
               <ClientsAutoSlider />
@@ -90,11 +90,9 @@ const Main: React.FC<MainProps> = ({ portfolio }) => {
           </div>
         </section>
 
-        {/* Portfolio 섹션 */}
-        <section id="portfolio" ref={portfolioRef} className="">
-          <div className={animClass({ inView: portfolioInView, delayMs: 0 }) + " text-center pt-10"}>
-            Profile
-
+        <section id="portfolio" ref={portfolioRef} className="mb-20">
+          <div id="batang" className={animClass({ inView: portfolioInView, delayMs: 0 }) + " text-center pt-10 text-black text-4xl font-bold leading-10 mb-6"}>
+            Portfolio
           </div>
 
           <PortfolioGrid
@@ -133,8 +131,13 @@ const Main: React.FC<MainProps> = ({ portfolio }) => {
           </div>
         </section>
 
-        <section id="contact">
-          <Contact />
+        <section id="contact" className="relative py-20 px-6 flex flex-col items-center overflow-hidden
+           bg-[length:100%_100%] 
+      ">
+        <div className="w-full max-w-6xl">
+
+          <ContactForm />
+        </div>
         </section>
       </div>
     </main>
