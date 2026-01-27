@@ -64,7 +64,7 @@ const PricingSection = () => {
                         </div>
 
                         <div className="text-center text-white">
-                            <div className="text-4xl font-">150,000원</div>
+                            <div className="text-4xl font-bold">150,000원</div>
                             <div className="text-xl font-medium">
                                 가성비로 시작하는 기초 브랜딩의 정석
                             </div>
