@@ -76,7 +76,7 @@ const Main: React.FC<MainProps> = ({ portfolio }) => {
           bg-[url('/images/bg.png')]
           bg-cover
           bg-center
-          bg-no-repeat        "
+          bg-no-repeat"
       >
         <section id="OurClient" className="py-20">
           <div className="mx-auto max-w-7xl px-6">

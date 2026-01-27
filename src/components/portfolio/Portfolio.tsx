@@ -107,12 +107,12 @@ const Portfolio: React.FC<PortfolioProps> = ({ items }) => {
       {/* 상단 부분 */}
       <section className="py-20 lg:py-24 xl:py-28">
         <div className="text-center">
-          <h2 className={animClass({ inView, delayMs: 0, from: "up" }) + " text-[48px] font-extrabold tracking-tight text-black"}>
-            포트폴리오
+          <h2 id="batang" className={animClass({ inView, delayMs: 0, from: "up" }) + " text-[48px] font-extrabold tracking-tight text-black"}>
+            Portfolio
           </h2>
 
           <p className={animClass({ inView, delayMs: 120, from: "up" }) + " mt-3 text-lg text-black/60"}>
-            우리들의 성공 레퍼런스
+          단순한 포트폴리오를 넘어 비즈니스의 해답이 된 레퍼런스들
           </p>
         </div>
       </section>

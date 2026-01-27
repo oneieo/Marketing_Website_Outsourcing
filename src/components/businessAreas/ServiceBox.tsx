@@ -20,7 +20,7 @@ export const ServiceBox: React.FC<ServiceBoxProps> = ({
 }) => {
     return (
         <div className={`max-w-4xl mx-auto p-12 relative ${className ?? ""}`}>
-            <h3 className="text-[32px] font-bold text-center mb-16">{boxTitle}</h3>
+            <h3 id="batang" className="text-[32px] font-bold text-center mb-16">{boxTitle}</h3>
 
             <div className="grid md:grid-cols-2 gap-16">
                 <ServiceColumn {...left} />

@@ -9,7 +9,7 @@ const BusinessAreas: React.FC = () => {
         ">
             {/* 1. 상단 헤더 섹션 */}
             <div className="animate_right text-center py-20 lg:py-24 xl:py-28">
-                <h2 className="text-[56px] font-bold tracking-tight text-black mb-4">사업영역</h2>
+                <h2 id="batang" className="text-[56px] font-bold tracking-tight text-black mb-4">사업영역</h2>
                 <p className="text-lg text-black/50 font-medium">우리는 이런 사업을 하고있어요</p>
             </div>
 

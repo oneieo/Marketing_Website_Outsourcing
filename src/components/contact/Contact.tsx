@@ -340,7 +340,7 @@ const Contact: React.FC = () => {
       <div ref={ref} className="w-full max-w-6xl">
         {/* 상단 타이틀 섹션 */}
         <div className={animClass({ inView, delayMs: 0, from: "right" }) + " text-center mb-24 py-20 lg:py-20 xl:py-24"}>
-          <h2 className="text-[56px] font-bold tracking-tight text-black mb-4">
+          <h2 id="batang" className="text-[56px] font-bold tracking-tight text-black mb-4">
             문의하기
           </h2>
           <p className="text-lg text-black/50 font-medium">
