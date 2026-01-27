@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useInViewOnce } from "../hooks/useInViewOnce";
+import { useInViewOnce } from "../../hooks/useInViewOnce";
 
 function animClass({
   inView,
@@ -36,7 +36,6 @@ const Contact: React.FC = () => {
   const [product, setProduct] = useState("STANDARD");
   const [message, setMessage] = useState("");
 
-  // ✅ inView
   const { ref, inView } = useInViewOnce<HTMLDivElement>({ threshold: 0.2 });
 
   const onSub = () => {
@@ -73,7 +72,9 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="relative py-20 px-6 flex flex-col items-center overflow-hidden"
+      className="relative py-20 px-6 flex flex-col items-center overflow-hidden
+          bg-[url('/images/bg.png')] bg-[length:100%_100%]
+      "
     >
       <div ref={ref} className="w-full max-w-6xl">
         {/* 상단 타이틀 섹션 */}
@@ -102,7 +103,7 @@ const Contact: React.FC = () => {
             }
           >
             <div>
-              <h3 className="text-[64px] font-serif font-bold leading-tight mb-8">
+              <h3 className="text-[64px] font-bold leading-tight mb-8">
                 Let's Talk
               </h3>
               <div className="text-[20px] space-y-1 font-medium text-black/80">
@@ -113,12 +114,12 @@ const Contact: React.FC = () => {
             </div>
 
             <div>
-              <h4 className="text-[32px] font-serif font-bold mb-4">Email</h4>
+              <h4 className="text-[32px] font-bold mb-4">Email</h4>
               <p className="text-lg text-black/70">dlalsrud0614@naver.com</p>
             </div>
 
             <div>
-              <h4 className="text-[32px] font-serif font-bold mb-6">Socials</h4>
+              <h4 className="text-[32px] font-bold mb-6">Socials</h4>
               <div className="flex flex-col space-y-4 text-lg">
                 <a
                   href="#"
@@ -286,6 +287,7 @@ const Contact: React.FC = () => {
               </button>
             </form>
           </div>
+
         </div>
       </div>
     </section>

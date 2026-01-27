@@ -88,7 +88,7 @@ const Portfolio: React.FC<PortfolioProps> = ({ items }) => {
 
   if (loading) {
     return (
-      <section id="portfolio" className="py-24 px-6 bg-white/[0.02]">
+      <section id="portfolio" className="py-24 px-6 bg-white/[0.02] ">
         <div className="max-w-7xl mx-auto text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-500 mx-auto"></div>
           <p className="text-slate-400 mt-4">포트폴리오를 불러오는 중...</p>
@@ -98,7 +98,12 @@ const Portfolio: React.FC<PortfolioProps> = ({ items }) => {
   }
 
   return (
-    <div ref={ref} id="portfolio" className="relative py-20 lg:py-20 xl:py-24">
+    <div ref={ref} id="portfolio" className="relative py-20 lg:py-20 xl:py-24
+          bg-[url('/images/bg.png')]
+          bg-cover
+          bg-center
+          bg-no-repeat
+    ">
       {/* 상단 부분 */}
       <section className="py-20 lg:py-24 xl:py-28">
         <div className="text-center">

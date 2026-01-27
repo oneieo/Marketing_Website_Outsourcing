@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero: React.FC = () => {
   return (
-    <section className="pt-32 px-6 overflow-hidden">
+    <section className="pt-32 px-6 overflow-hidden animate_top ">
       <div id="batang" className="max-w-7xl font-bold pb-32 mx-auto text-center relative">
 
         <img
@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
             absolute
             right-0
             top-0
-            w-40 md:w-56
+            w-40 md:w-52
             pointer-events-none
           "
         />
@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
           처럼"
         </h1>
 
-        <p  className="text-xl text-black max-w-2xl mx-auto mb-10">
+        <p className="text-xl text-black max-w-2xl mx-auto mb-10">
           고객의 브랜드를 가장 효율적으로 성장시키는 마케팅 파트너 '화경'입니다
         </p>
 
@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
       <div
         data-animate
         id="batang"
-        className="text-center text-4xl pb-10 leading-relaxed
+        className="text-center text-4xl py-10 leading-relaxed
                    opacity-0 translate-y-4
                    transition-all duration-700 ease-out"
       >

@@ -16,7 +16,13 @@ const Navbar: React.FC<NavbarProps> = ({ onAdminClick, isAdmin }) => {
           className="text-2xl font-extrabold tracking-tighter cursor-pointer"
           onClick={() => navigate("/")}
         >
-          <span className="text-gradient">AURA</span> GROWTH
+          <div className="flex items-center">
+            <img
+              src="/images/icon-header-logo.png"
+              alt="화경 로고"
+            />
+
+          </div>
         </div>
 
         {!isAdmin && (
@@ -53,7 +59,7 @@ const Navbar: React.FC<NavbarProps> = ({ onAdminClick, isAdmin }) => {
           {!isAdmin && (
             <button
               onClick={() => navigate("/contact")}
-              className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-full text-sm font-semibold transition-all"
+              className="px-5 py-2.5 bg-[#A11D18] hover:bg-white text-white hover:text-[#A11D18] border-2 border-[#A11D18] rounded-full text-sm font-semibold transition-all"
             >
               상담 예약하기
             </button>
