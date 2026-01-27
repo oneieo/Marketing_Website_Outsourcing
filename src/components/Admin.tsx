@@ -7,9 +7,9 @@ interface AdminProps {
   onDeletePortfolio: (id: number) => void;
 }
 
-const Admin: React.FC<AdminProps> = ({ onAddPortfolio, onDeletePortfolio }) => {
+const Admin: React.FC<AdminProps> = ({ onAddPortfolio, onDeletePortfolio}) => {
   const [title, setTitle] = useState("");
-  const [category, setCategory] = useState("병원");
+  const [category, setCategory] = useState<string[]>(["병원"]);
   const [imageUrl, setImageUrl] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
@@ -98,7 +98,7 @@ const Admin: React.FC<AdminProps> = ({ onAddPortfolio, onDeletePortfolio }) => {
               <select
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none"
                 value={category}
-                onChange={(e) => setCategory(e.target.value)}
+                onChange={(e) => setCategory([e.target.value])}
               >
                 <option value="병원">병원</option>
                 <option value="대학교">대학교</option>

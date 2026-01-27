@@ -1,4 +1,5 @@
-import BusinessAreas from "../../components/BusinessAreas";
+import BusinessAreas from "../../components/businessAreas/BusinessAreas";
+
 
 const page = () => {
   return <BusinessAreas />;
