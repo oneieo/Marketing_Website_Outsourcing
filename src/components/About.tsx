@@ -72,7 +72,8 @@ import ClientsAutoSlider from "./main/ClientsAutoSlider";
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 px-6 bg-white overflow-hidden">
+    <section id="about" className="py-24 px-6 bg-white overflow-hidden
+    bg-[url('/images/bg.png')] bg-[length:100%_100%]">
       <div className="max-w-7xl mx-auto">
         {/* 회사 소개 메인 콘텐츠 */}
         <div className="grid lg:grid-cols-2 gap-14 items-center mb-24">
@@ -107,7 +108,7 @@ const About: React.FC = () => {
 
               <div id="pretendard" className="text-lg leading-relaxed">
                 <p>최저가라고 해서 허술하지 않을까 걱정되시나요?</p>
-                <strong className="text-black font-bold">아닙니다.</strong> 가격과 상관없이, 
+                <strong className="text-black font-bold">아닙니다.</strong> 가격과 상관없이,
                 <span className="text-[#A11D18] font-bold"> 최고의 퀄리티</span>로 모십니다.
               </div>
 
@@ -126,8 +127,8 @@ const About: React.FC = () => {
         </div>
         <div className="pt-6 w-full text-center mb-16">
           <p id="batang" className="text-3xl font-bold text-black leading-relaxed">
-                  대표님, 블로그 관리는 이제
-                  <span className="text-[#A11D18]"> '선택'</span>이 아닌 <span className="text-[#A11D18]">'필수'</span>입니다.
+            대표님, 블로그 관리는 이제
+            <span className="text-[#A11D18]"> '선택'</span>이 아닌 <span className="text-[#A11D18]">'필수'</span>입니다.
           </p>
         </div>
 
@@ -163,23 +164,23 @@ const About: React.FC = () => {
               <div className="text-5xl mb-6 group-hover:scale-110 transition-transform">
                 <img src={val.icon} />
               </div>
-              <h4  className="text-2xl font-bold mb-4 text-black">{val.title}</h4>
+              <h4 className="text-2xl font-bold mb-4 text-black">{val.title}</h4>
               <p id="pretendard" className="text-black/70 leading-relaxed text-base">{val.desc}</p>
             </div>
           ))}
         </div>
       </div>
       <section id="OurClient" className="py-20 mt-16">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="text-center space-y-3">
-              <div id="batang" className="text-black text-4xl font-bold leading-10 mb-6">화경과 함께한 파트너사</div>
-              <div className="text-black text-md font-normal leading-5">수많은 성공 사례로 검증된 화경만의 공식을 바탕으로 브랜드가 직면한 불확실성을 독보적인 확신으로 바꿔 드립니다.</div>
-            </div>
-            <div className="mt-20">
-              <ClientsAutoSlider />
-            </div>
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="text-center space-y-3">
+            <div id="batang" className="text-black text-4xl font-bold leading-10 mb-6">화경과 함께한 파트너사</div>
+            <div className="text-black text-md font-normal leading-5">수많은 성공 사례로 검증된 화경만의 공식을 바탕으로 브랜드가 직면한 불확실성을 독보적인 확신으로 바꿔 드립니다.</div>
           </div>
-        </section>
+          <div className="mt-20">
+            <ClientsAutoSlider />
+          </div>
+        </div>
+      </section>
     </section>
   );
 };
