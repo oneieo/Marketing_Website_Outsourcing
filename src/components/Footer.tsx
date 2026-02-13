@@ -20,9 +20,9 @@ const Footer = () => {
           <div className="text-left text-sm text-slate-400 leading-relaxed w-[260px] mr-24">
             <div>상호명: 화경마케팅</div>
             <div>대표: 이민경</div>
-            <div>사업자등록번호:</div>
-            <div>주소:</div>
-            <div>전화:</div>
+            <div>사업자등록번호: 675-03-03592</div>
+            <div>주소: 전주시 덕진구 금암1길 33</div>
+            <div>전화: 010-5579-3312</div>
             <div>이메일: dialsrud0614@naver.com</div>
           </div>
 
